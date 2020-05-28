@@ -1,9 +1,8 @@
 import React from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
-import Welcome from "./components/Welcome.jsx";
-import DoneQuickView from "./components/DoneQuickView.jsx";
-import Header from "./components/Header.jsx";
-import "./App.css";
+import Welcome from "./Welcome.jsx";
+import DoneQuickView from "./DoneQuickView.jsx";
+import Header from "./Header.jsx";
 
 function App() {
   return (
