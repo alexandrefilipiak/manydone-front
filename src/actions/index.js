@@ -6,3 +6,5 @@ const selectDone = (done) => {
     payload: done,
   };
 };
+
+export default selectDone;
