@@ -9,6 +9,7 @@ export default class Welcome extends Component {
     return (
       <h1>
         Welcome, please <Link to="/done-quick-view">click here</Link> to see
+        your dones. And <Link to="/done-table-view">click here</Link> to edit
         your dones.
       </h1>
     );
