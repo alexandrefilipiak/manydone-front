@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class DoneTableView extends React.Component {
   render() {
@@ -6,4 +7,10 @@ class DoneTableView extends React.Component {
   }
 }
 
-export default DoneTableView;
+const mapStateToProps = (state) => {
+  console.log("here is the state:" + JSON.stringify(state));
+
+  return state;
+};
+
+export default connect(mapStateToProps)(DoneTableView);
