@@ -7,7 +7,7 @@ const DoneDetail = ({ done }) => {
   }
   return (
     <div>
-      <h3>>Details for:</h3>
+      <h3>Details for:</h3>
       <p>
         Title: {done.title}
         <br />
