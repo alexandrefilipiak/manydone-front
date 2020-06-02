@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import moment from "moment";
+import fetchDones from "./fetchDones.js";
 
 export const donesReducer = () => {
   return [
@@ -43,4 +44,5 @@ export const selectedDoneReducer = (selectedDone = null, action) => {
 export default combineReducers({
   dones: donesReducer,
   selectedDone: selectedDoneReducer,
+  donesAPI: fetchDones,
 });
