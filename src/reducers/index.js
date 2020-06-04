@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import moment from "moment";
 import fetchDones from "./fetchDones.js";
+import googleAuthReducer from "./googleAuthReducer.js";
 
 export const donesReducer = () => {
   return [
@@ -45,4 +46,5 @@ export default combineReducers({
   dones: donesReducer,
   selectedDone: selectedDoneReducer,
   donesAPI: fetchDones,
+  auth: googleAuthReducer,
 });
