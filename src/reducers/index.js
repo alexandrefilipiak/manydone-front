@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
 import moment from "moment";
 import fetchDones from "./fetchDones.js";
 import googleAuthReducer from "./googleAuthReducer.js";
@@ -47,4 +48,5 @@ export default combineReducers({
   selectedDone: selectedDoneReducer,
   donesAPI: fetchDones,
   auth: googleAuthReducer,
+  form: formReducer,
 });
