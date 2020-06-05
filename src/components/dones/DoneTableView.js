@@ -15,10 +15,20 @@ class DoneTableView extends React.Component {
               <DoneDetail />
             </div>
           </div>
+          <button
+            className="ui button primary"
+            onClick={this.navigateDoneCreate}
+          >
+            What achievement have you done ?
+          </button>
         </div>
       </React.Fragment>
     );
   }
+
+  navigateDoneCreate = () => {
+    this.props.history.push("/done-create");
+  };
 }
 
 export default DoneTableView;

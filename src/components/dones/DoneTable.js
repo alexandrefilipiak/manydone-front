@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectDone } from "../actions";
+import { selectDone } from "../../actions";
 
 class DoneTable extends React.Component {
   renderList() {
