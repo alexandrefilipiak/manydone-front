@@ -1,5 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import { createDone } from "../../actions";
 
 class DoneCreate extends React.Component {
   renderError({ error, touched }) {
@@ -23,9 +25,9 @@ class DoneCreate extends React.Component {
     );
   };
 
-  onSubmit(formValues) {
-    console.log(formValues);
-  }
+  onSubmit = (formValues) => {
+    this.props.createDone(formValues);
+  };
 
   render() {
     //console.log(formProps);
@@ -63,7 +65,9 @@ const validate = (formValues) => {
   return errors;
 };
 
-export default reduxForm({
+const formWrapped = reduxForm({
   form: "doneCreate",
   validate: validate,
 })(DoneCreate);
+
+export default connect(null, { createDone })(formWrapped);
