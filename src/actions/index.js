@@ -39,3 +39,38 @@ export const createDone = (formValues) => async (dispatch) => {
     payload: response.data,
   });
 };
+
+export const fetchDones = () => async (dispatch) => {
+  const response = await dones.get("/dones");
+  dispatch({
+    type: FETCH_DONES,
+    payload: response.data,
+  });
+};
+
+export const fetchDone = (id) => async (dispatch) => {
+  const response = await dones.get(`/dones/${id}`);
+
+  dispatch({
+    type: FETCH_DONE,
+    payload: response.data,
+  });
+};
+
+export const editDone = (id, formValues) => async (dispatch) => {
+  const response = dones.put(`/dones/${id}`, formValues);
+
+  dispatch({
+    type: EDIT_DONE,
+    payload: response.data,
+  });
+};
+
+export const deleteDone = (id) => async (dispatch) => {
+  await dones.delete(`/dones/${id}`);
+
+  dispatch({
+    type: DELETE_DONE,
+    payload: id,
+  });
+};
