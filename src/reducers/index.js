@@ -4,8 +4,9 @@ import moment from "moment";
 import fetchDones from "./fetchDones.js";
 import createDone from "./createDone.js";
 import googleAuthReducer from "./googleAuthReducer.js";
+import doneReducer from "./doneReducer.js";
 
-export const donesReducer = () => {
+/*export const donesReducer = () => {
   return [
     {
       id: 1,
@@ -34,7 +35,7 @@ export const donesReducer = () => {
       doneDate: moment("25/12/2019", "DD-MM-YYYY"),
     },
   ];
-};
+};*/
 
 export const selectedDoneReducer = (selectedDone = null, action) => {
   if (action.type === "DONE_SELECTED") {
@@ -45,7 +46,7 @@ export const selectedDoneReducer = (selectedDone = null, action) => {
 };
 
 export default combineReducers({
-  dones: donesReducer,
+  dones: doneReducer,
   selectedDone: selectedDoneReducer,
   donesAPI: fetchDones,
   auth: googleAuthReducer,
