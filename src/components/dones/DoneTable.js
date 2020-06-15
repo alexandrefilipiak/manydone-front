@@ -34,7 +34,7 @@ class DoneTable extends React.Component {
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return { dones: state.dones };
+  return { dones: Object.values(state.dones) };
 };
 
 export default connect(mapStateToProps, { selectDone, fetchDones })(DoneTable);
