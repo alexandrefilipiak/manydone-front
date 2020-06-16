@@ -8,11 +8,11 @@ class DoneTable extends React.Component {
   }
 
   renderList() {
-    return (
-      <div>test</div>
-    ); /*this.props.dones.map((done) => {
+    console.log(this.props.dones);
+    return this.props.dones.map((done) => {
       return (
         <div className="item" key={done.id}>
+          <i className="large middle aligned icon camera " />
           <div className="right floated content">
             <button
               className="ui button primary"
@@ -24,11 +24,11 @@ class DoneTable extends React.Component {
           <div className="content">{done.title}</div>
         </div>
       );
-    });*/
+    });
   }
 
   render() {
-    return <div className="ui divided list">{this.renderList()}</div>;
+    return <div className="ui celled list">{this.renderList()}</div>; //divided list
   }
 }
 
