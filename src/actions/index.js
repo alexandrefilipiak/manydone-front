@@ -31,8 +31,11 @@ export const signOut = () => {
   };
 };
 
-export const createDone = (formValues) => async (dispatch) => {
-  const response = await dones.post("/dones", formValues);
+export const createDone = (formValues) => async (dispatch, getState) => {
+  console.log("actionCreator reate done called");
+  const { userId } = getState().auth;
+  const response = await dones.post("/dones", { ...formValues, userId });
+  console.log("actionCreator reate done called2");
   //Return an action
   dispatch({
     type: CREATE_DONE,
