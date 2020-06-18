@@ -7,11 +7,23 @@ class DoneTable extends React.Component {
     this.props.fetchDones();
   }
 
+  renderEditAndDeleteButton(done) {
+    if (done.userId === this.props.currentUserId) {
+      return (
+        <div className="right floated content">
+          <button className="ui button primary">EDIT</button>
+          <button className="ui button negative">DELETE</button>
+        </div>
+      );
+    }
+  }
+
   renderList() {
     console.log(this.props.dones);
     return this.props.dones.map((done) => {
       return (
         <div className="item" key={done.id}>
+          <div className="content">{this.renderEditAndDeleteButton(done)}</div>
           <i className="large middle aligned icon camera " />
           <div className="right floated content">
             <button
@@ -34,7 +46,10 @@ class DoneTable extends React.Component {
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return { dones: Object.values(state.dones) };
+  return {
+    dones: Object.values(state.dones),
+    currentUserId: state.auth.userId,
+  };
 };
 
 export default connect(mapStateToProps, { selectDone, fetchDones })(DoneTable);
