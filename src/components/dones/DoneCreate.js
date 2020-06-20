@@ -30,8 +30,6 @@ class DoneCreate extends React.Component {
   };
 
   render() {
-    //console.log(formProps);
-
     return (
       <form
         onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -70,4 +68,4 @@ const formWrapped = reduxForm({
   validate: validate,
 })(DoneCreate);
 
-export default connect(null, { createDone })(formWrapped);
+export default connect(null, { createDone: createDone })(formWrapped);
