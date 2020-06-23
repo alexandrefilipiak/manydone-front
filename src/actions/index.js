@@ -8,6 +8,7 @@ import {
   DELETE_DONE,
   EDIT_DONE,
 } from "./types.js";
+import history from "../history";
 // Action creators
 export const selectDone = (doneId) => {
   //Return an action
@@ -35,7 +36,7 @@ export const createDone = (formValues) => async (dispatch, getState) => {
   console.log("actionCreator reate done called");
   const { userId } = getState().auth;
   const response = await dones.post("/dones", { ...formValues, userId });
-  console.log("actionCreator reate done called2");
+  history.push("/done-table-view");
   //Return an action
   dispatch({
     type: CREATE_DONE,
