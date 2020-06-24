@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectDone, fetchDones } from "../../actions";
+import { Link } from "react-router-dom";
 
 class DoneTable extends React.Component {
   componentDidMount() {
@@ -8,11 +9,14 @@ class DoneTable extends React.Component {
   }
 
   renderEditAndDeleteButton(done) {
+    const id = done.id;
     if (done.userId === this.props.currentUserId) {
       return (
         <div className="right floated content">
-          <button className="ui button primary">EDIT</button>
-          <button className="ui button negative">DELETE</button>
+          <Link to={`/dones/edit/${id}`} className="ui button primary">
+            EDIT
+          </Link>
+          ><button className="ui button negative">DELETE</button>
         </div>
       );
     }
