@@ -1,14 +1,15 @@
 // generated with template rcredux
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-export class DoneEdit extends Component {
-  render() {
-    return <div>DoneEdit</div>;
-  }
-}
+const DoneEdit = (props) => {
+  console.log(props);
+  return <div>DoneEdit</div>;
+};
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state, ownProps) => {
+  return { done: state.dones[ownProps.match.params.id] };
+};
 
 const mapDispatchToProps = {};
 
