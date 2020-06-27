@@ -62,8 +62,8 @@ export const fetchDone = (id) => async (dispatch) => {
 };
 
 export const editDone = (id, formValues) => async (dispatch) => {
-  const response = dones.put(`/dones/${id}`, formValues);
-
+  const response = await dones.patch(`/dones/${id}`, formValues);
+  history.push("/done-table-view");
   dispatch({
     type: EDIT_DONE,
     payload: response.data,
