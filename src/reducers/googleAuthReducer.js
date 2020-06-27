@@ -1,4 +1,3 @@
-import { relativeTimeRounding } from "moment";
 import { SIGN_IN, SIGN_OUT } from "../actions/types.js";
 
 const INITIAL_STATE = {
