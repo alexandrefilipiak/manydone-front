@@ -5,7 +5,14 @@ const Modal = (props) => {
   return ReactDOM.createPortal(
     <div className="ui dimmer modals visible active">
       <div className="ui standard modal visible active">
-        jdpzajdpaozjdzpaj aetgaez aez afez fae fae
+        <div className="header">Delete Done</div>
+        <div className="content">
+          Are you sure you want to delete this done?
+        </div>
+        <div className="actions">
+          <button className="ui primary button">Delete</button>
+          <button className="ui button">Cancel</button>
+        </div>
       </div>
     </div>,
     document.querySelector("#modal")
