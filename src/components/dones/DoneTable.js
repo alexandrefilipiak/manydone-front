@@ -16,7 +16,10 @@ class DoneTable extends React.Component {
           <Link to={`/dones/edit/${id}`} className="ui button primary">
             EDIT
           </Link>
-          ><button className="ui button negative">DELETE</button>
+          >
+          <Link to={`/dones/delete/${id}`} className="ui button negative">
+            DELETE
+          </Link>
         </div>
       );
     }
