@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "../Modal";
+import { Link } from "react-router-dom";
 import history from "../../history";
 import { fetchDone } from "../../actions";
 import { connect } from "react-redux";
@@ -13,7 +14,9 @@ class DoneDelete extends React.Component {
     const actions = (
       <>
         <button className="ui button negative">Delete</button>
-        <button className="ui button">Cancel</button>
+        <Link to="/done-table-view" className="ui button">
+          Cancel
+        </Link>
       </>
     );
     return (
