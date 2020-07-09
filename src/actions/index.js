@@ -72,9 +72,9 @@ export const editDone = (id, formValues) => async (dispatch) => {
 
 export const deleteDone = (id) => async (dispatch) => {
   await dones.delete(`/dones/${id}`);
-
   dispatch({
     type: DELETE_DONE,
     payload: id,
   });
+  history.push("/done-table-view");
 };

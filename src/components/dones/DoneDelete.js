@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../Modal";
 import { Link } from "react-router-dom";
 import history from "../../history";
-import { fetchDone } from "../../actions";
+import { fetchDone, deleteDone } from "../../actions";
 import { connect } from "react-redux";
 
 class DoneDelete extends React.Component {
@@ -11,9 +11,15 @@ class DoneDelete extends React.Component {
   }
 
   render() {
+    const { id } = this.props.match.params;
     const actions = (
       <>
-        <button className="ui button negative">Delete</button>
+        <button
+          onClick={() => this.props.deleteDone(id)}
+          className="ui button negative"
+        >
+          Delete
+        </button>
         <Link to="/done-table-view" className="ui button">
           Cancel
         </Link>
@@ -38,4 +44,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchDone })(DoneDelete);
+export default connect(mapStateToProps, { fetchDone, deleteDone })(DoneDelete);
