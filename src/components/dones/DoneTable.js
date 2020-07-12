@@ -12,12 +12,12 @@ class DoneTable extends React.Component {
     const id = done.id;
     if (done.userId === this.props.currentUserId) {
       return (
-        <div className="right floated content">
-          <Link to={`/dones/edit/${id}`} className="ui button primary">
+        <div className="container">
+          <Link to={`/dones/edit/${id}`} className="btn btn-primary">
             EDIT
           </Link>
-          >
-          <Link to={`/dones/delete/${id}`} className="ui button negative">
+
+          <Link to={`/dones/delete/${id}`} className="btn btn-danger">
             DELETE
           </Link>
         </div>
