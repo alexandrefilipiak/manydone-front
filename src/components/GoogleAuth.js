@@ -40,7 +40,7 @@ class GoogleAuth extends React.Component {
       return null; //todo : display spinner
     } else if (this.props.isSignedIn) {
       return (
-        <button className="ui red google button" onClick={this.onSignOutClick}>
+        <button className="btn btn-primary" onClick={this.onSignOutClick}>
           <i className="google icon" />
           Sign Out
         </button>
