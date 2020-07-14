@@ -34,7 +34,7 @@ class DoneTable extends React.Component {
           <i className="large middle aligned icon camera " />
           <div className="right floated content">
             <button
-              className="ui button primary"
+              className="btn btn-primary"
               onClick={() => this.props.selectDone(done)}
             >
               Select
