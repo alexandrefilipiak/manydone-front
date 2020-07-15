@@ -4,12 +4,14 @@ import GoogleAuth from "./GoogleAuth";
 export default class Header extends Component {
   render() {
     return (
-      <div className="ui secondary pointing menu">
-        ManyDone
+      <nav className="navbar navbar-dark bg-dark">
+        <a href="" className="navbar-brand">
+          ManyDones
+        </a>
         <div className="right menu">
           <GoogleAuth />
         </div>
-      </div>
+      </nav>
     );
   }
 }
