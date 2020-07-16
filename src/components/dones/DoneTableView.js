@@ -15,10 +15,7 @@ class DoneTableView extends React.Component {
               <DoneDetail />
             </div>
           </div>
-          <button
-            className="ui button primary"
-            onClick={this.navigateDoneCreate}
-          >
+          <button className="btn btn-primary" onClick={this.navigateDoneCreate}>
             What achievement have you done ?
           </button>
         </div>
